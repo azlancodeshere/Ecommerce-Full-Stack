@@ -83,7 +83,7 @@ const CartItem = ({item, setCartTotal,cartitems,setCartItems, setNumberCartItems
 
         <div className="ms-3 flex-grow-1">
           <h5 className="mb-1">{item.product.name}</h5>
-          <p className="mb-0 text-muted">{`$${item.product.price}`}</p>
+          <p className="mb-0 text-muted">{`₹${item.product.price}`}</p>
         </div>
 
         <div className="d-flex align-items-center">

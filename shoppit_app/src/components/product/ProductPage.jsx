@@ -121,7 +121,7 @@ const ProductPage = ( {setNumberCartItems}) => {
 
               <div className="fs-5 mb-5">
                
-                <span>{`$${product?.price}`}</span>
+                <span>{`₹${product?.price}`}</span>
               </div>
 
               <p className="lead">

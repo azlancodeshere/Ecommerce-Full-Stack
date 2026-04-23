@@ -39,7 +39,7 @@ const OrderHistoryItem = ({ item }) => {
 
               {/* Price */}
               <div className="col-md-2 text-center">
-                ${orderItem.price}
+                ₹{orderItem.price}
               </div>
 
             </div>

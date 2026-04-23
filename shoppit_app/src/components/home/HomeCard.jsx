@@ -29,7 +29,7 @@ const HomeCard = ( {product} ) => {
             </h5>
 
             <h6 className={styles.cardText}>
-              {`$${product.price}`}
+              {`₹${product.price}`}
             </h6>
 
           </div>

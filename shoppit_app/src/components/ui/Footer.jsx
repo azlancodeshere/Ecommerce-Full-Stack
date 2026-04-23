@@ -39,7 +39,7 @@ const Footer = () => {
         </div>
 
         
-        <p className="small mb-0">&copy; 2024 Shoppit</p>
+        <p className="small mb-0">&copy; 2026 Shoppit</p>
       </div>
     </footer>
   );

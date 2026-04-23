@@ -26,7 +26,7 @@ const OrderItem = ({cartitem}) => {
         </div>
       </div>
 
-      <h6>{`$${cartitem.product.price}`}</h6>
+      <h6>{`₹${cartitem.product.price}`}</h6>
     </div>
   );
 };

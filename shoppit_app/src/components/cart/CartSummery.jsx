@@ -22,7 +22,7 @@ const CartSummary = ({ tax = 0, cartTotal = 0 }) => {
 
       <div className={`${styles.row} ${styles.total}`}>
         <span>Total</span>
-        <strong>${total}</strong>
+        <strong>₹{total}</strong>
       </div>
     </div>
   );
