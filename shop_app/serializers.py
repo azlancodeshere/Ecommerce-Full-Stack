@@ -9,6 +9,12 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ["id", "name", "slug", "image", "description", "category", "price"]
+    
+    def get_image(self, obj):
+        if obj.image:
+            return obj.image.url
+        return None
+
 
 
 class DetailProductSerializer(serializers.ModelSerializer):
