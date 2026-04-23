@@ -22,7 +22,6 @@ db.sqlite3
 
 # Static / media
 staticfiles/
-media/
 
 # Node (React)
 node_modules/
