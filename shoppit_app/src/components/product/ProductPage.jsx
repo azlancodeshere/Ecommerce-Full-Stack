@@ -113,7 +113,7 @@ const ProductPage = ( {setNumberCartItems}) => {
 
             {/* Product Details */}
             <div className="col-md-6">
-              <div className="small mb-1">SKU: BST-498</div>
+              
 
               <h1 className="display-5 fw-bolder">
                {product?.name}
