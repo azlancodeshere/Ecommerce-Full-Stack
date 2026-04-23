@@ -1,10 +1,10 @@
 import axios from "axios"
 import {jwtDecode} from "jwt-decode"
 
-export const BASE_URL = "http://127.0.0.1:8000/"
+export const BASE_URL = "https://ecommerce-full-stack-g7az.onrender.com/"
 
 const api = axios.create({
-    baseURL: "http://127.0.0.1:8000/",
+    baseURL: "https://ecommerce-full-stack-g7az.onrender.com/",
      headers: {
         "Content-Type": "application/json"
     }
