@@ -1,0 +1,75 @@
+/* PaymentSection.module.css */
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  background: #60508c;
+  color: white;
+  padding: 16px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: none;
+}
+
+.card-body {
+  padding: 22px;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.form-check:hover {
+  border-color: #60508c;
+  background: #f7f4ff;
+}
+
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.form-check label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #60508c;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.place-order-btn:hover {
+  background: #4e4173;
+  transform: translateY(-2px);
+}

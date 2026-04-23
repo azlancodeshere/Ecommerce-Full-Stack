@@ -1,0 +1,71 @@
+import { createContext, useEffect, useState } from "react";
+import { jwtDecode } from "jwt-decode";
+import api from "../api";
+
+const AuthContext = createContext(false);
+
+function AuthProvider({ children }) {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState("");
+
+  // ✅ Logout function
+  const logout = () => {
+    localStorage.removeItem("access");
+    localStorage.removeItem("refresh");
+    setIsAuthenticated(false);
+    setUsername("");
+  };
+
+  // ✅ Get username
+  function get_username() {
+    api.get("/api/get_username/")
+      .then(res => {
+        setUsername(res.data.username);
+      })
+      .catch(err => {
+        console.log(err.message);
+        logout(); // auto logout if token invalid
+      });
+  }
+
+  // ✅ Check token on app load
+  useEffect(() => {
+    const token = localStorage.getItem("access");
+
+    if (!token) return;
+
+    try {
+      const decoded = jwtDecode(token);
+      const expiry_date = decoded.exp;
+      const current_time = Date.now() / 1000;
+
+      if (expiry_date >= current_time) {
+        setIsAuthenticated(true);
+        get_username();
+      } else {
+        logout(); // token expired
+      }
+    } catch (error) {
+      console.log("Invalid token");
+      logout(); // invalid token
+    }
+  }, []);
+
+  // ✅ Context value
+  const authValue = {
+    isAuthenticated,
+    username,
+    setIsAuthenticated,
+    get_username,
+    logout
+  };
+
+  return (
+    <AuthContext.Provider value={authValue}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+export { AuthContext, AuthProvider };
