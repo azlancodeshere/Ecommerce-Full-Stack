@@ -19,7 +19,7 @@ const OrderHistoryItem = ({ item }) => {
               {/* Image */}
               <div className="col-md-2">
                 <img
-                  src={`${BASE_URL}${orderItem.product.image}`}
+                  src={orderItem.product.image}
                   alt=""
                   className="img-fluid"
                 />
