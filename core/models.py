@@ -8,7 +8,7 @@ class CustomUser(AbstractUser):
         unique=True,
         validators=[
             RegexValidator(
-                regex=r'^[\w\s.@+-]+$',  # ✅ allows spaces
+                regex=r'^[\w\s.@+-]+$',  
                 message="Username can contain letters, numbers, spaces and @/./+/-/_"
             )
         ]
