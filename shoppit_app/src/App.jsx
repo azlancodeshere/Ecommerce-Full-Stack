@@ -11,7 +11,7 @@ import LoginPage from './components/user/LoginPage'
 import ProtectedRoute from './components/ui/ProtectedRoute'
 import { AuthProvider } from './context/AuthContext'
 import UserProfilePage from './components/user/UserProfilePage'
-import SignupPage from "./components/user/SignupPage";
+import SignupPage from "./components/user/SignUpPage";
 
 
 
