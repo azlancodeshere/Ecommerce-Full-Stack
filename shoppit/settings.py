@@ -36,6 +36,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://ecommerce-full-stack-qe52.onrender.com"
+]
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 
