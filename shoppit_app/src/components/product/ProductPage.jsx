@@ -106,7 +106,7 @@ const ProductPage = ( {setNumberCartItems}) => {
             <div className="col-md-6">
               <img
                 className="card-img-top mb-5 mb-md-0"
-                src={`${BASE_URL}${product.image}`}
+                src={product.image}
                 alt="..."
               />
             </div>
@@ -125,10 +125,7 @@ const ProductPage = ( {setNumberCartItems}) => {
               </div>
 
               <p className="lead">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Praesentium at dolorem quidem modi. Nam sequi consequatur
-                obcaecati excepturi alias magni, accusamus eius blanditiis
-                delectus ipsam minima ea iste laborum vero?
+               {product?.description}
               </p>
 
               <div className="d-flex">
