@@ -15,7 +15,7 @@ const HomeCard = ( {product} ) => {
           
           <div className={styles.cardImgWrapper}>
             <img
-              src={`${BASE_URL}${product.image}`}
+              src={`{product.image}`}
               className={styles.cardImgTop}
               alt="Product Image"
             />
