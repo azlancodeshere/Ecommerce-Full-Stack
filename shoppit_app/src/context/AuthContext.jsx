@@ -9,7 +9,7 @@ function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState("");
 
-  // ✅ Logout function
+  
   const logout = () => {
     localStorage.removeItem("access");
     localStorage.removeItem("refresh");
@@ -17,7 +17,7 @@ function AuthProvider({ children }) {
     setUsername("");
   };
 
-  // ✅ Get username
+  
   function get_username() {
     api.get("/api/get_username/")
       .then(res => {
@@ -29,7 +29,7 @@ function AuthProvider({ children }) {
       });
   }
 
-  // ✅ Check token on app load
+  
   useEffect(() => {
     const token = localStorage.getItem("access");
 
@@ -52,7 +52,7 @@ function AuthProvider({ children }) {
     }
   }, []);
 
-  // ✅ Context value
+
   const authValue = {
     isAuthenticated,
     username,

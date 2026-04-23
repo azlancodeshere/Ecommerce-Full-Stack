@@ -9,7 +9,7 @@ const Footer = () => {
     >
       <div className="container text-center">
 
-        {/* 🔥 Quick Links */}
+        
         <div className="mb-2">
           <a href="#" className="text-white text-decoration-none mx-2">
             Home
@@ -25,7 +25,7 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* 🔥 Social Icons */}
+        
         <div className="mb-2">
           <a href="#" className="text-white mx-2">
             <FaFacebook />
@@ -38,7 +38,7 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* 🔥 Copyright */}
+        
         <p className="small mb-0">&copy; 2024 Shoppit</p>
       </div>
     </footer>

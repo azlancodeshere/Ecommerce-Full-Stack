@@ -14,7 +14,7 @@ const UserProfilePage = () => {
 
   const token = localStorage.getItem("access");
 
-  // ✅ 1. USER INFO
+  
   api.get("/api/user_info/", {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -25,14 +25,14 @@ const UserProfilePage = () => {
   })
   .catch(err => console.log(err));
 
-  // ✅ 2. ORDERS (THIS WAS MISSING)
+  
   api.get("/api/orders/", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   })
   .then(res => {
-    console.log("ORDERS:", res.data); // 🔥 check here
+    console.log("ORDERS:", res.data); 
     setOrderitems(res.data);
     setLoading(false);
   })
