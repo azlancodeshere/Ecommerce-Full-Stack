@@ -4,7 +4,7 @@ import {jwtDecode} from "jwt-decode"
 export const BASE_URL = "https://ecommerce-full-stack-g7az.onrender.com/"
 
 const api = axios.create({
-    baseURL: "http://ecommerce-full-stack-g7az.onrender.com/",
+    baseURL: BASE_URL,
      headers: {
         "Content-Type": "application/json"
     }
