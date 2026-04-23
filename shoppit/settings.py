@@ -178,4 +178,4 @@ SIMPLE_JWT = {
 
 REACT_BASE_URL = os.getenv("REACT_BASE_URL",  "http://localhost:5173",)
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
