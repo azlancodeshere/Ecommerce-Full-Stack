@@ -70,7 +70,7 @@ const CartItem = ({item, setCartTotal,cartitems,setCartItems, setNumberCartItems
         style={{ backgroundColor: "#f8f9fa", borderRadius: "5px" }}
       >
         <img
-          src={`${BASE_URL}${item.product.image}`}
+          src={item.product.image}
           alt="Product Image"
           className="img-fluid"
           style={{
