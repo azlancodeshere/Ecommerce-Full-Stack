@@ -46,7 +46,10 @@ const HomePage = () => {
    <Header/>
    {error && <Error error={error}/>}
    {error && <PlaceHolderContainer/> }
+
+   <div id="products">
    {loading || error !=""   ||   <CardContainer products={products} /> }
+   </div>
    
    </>
   )

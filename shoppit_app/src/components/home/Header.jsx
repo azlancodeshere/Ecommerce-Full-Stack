@@ -25,6 +25,7 @@ const Header = () => {
           <Link
             to="/shop"
             className="btn btn-light btn-lg rounded-pill px-4 py-2"
+            onClick={() => setTimeout(() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' }), 100)}
           >
             Shop Now
           </Link>
