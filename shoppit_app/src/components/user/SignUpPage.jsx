@@ -60,6 +60,10 @@ const SignupPage = () => {
       localStorage.setItem("refresh", refresh);
 
 
+      setIsAuthenticated(true);        
+       setUsername(username);           
+
+
       alert("User registered successfully");
 
       navigate("/");
