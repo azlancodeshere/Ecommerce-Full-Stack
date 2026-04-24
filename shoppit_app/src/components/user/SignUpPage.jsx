@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignupPage.css";
 import api from "../../api";
+import { AuthContext } from "../../context/AuthContext";
 
 
 const SignupPage = () => {
   const navigate = useNavigate();
+  const { setIsAuthenticated, get_username } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -61,7 +63,7 @@ const SignupPage = () => {
 
 
       setIsAuthenticated(true);        
-       setUsername(username);           
+      get_username(username);           
 
 
       alert("User registered successfully");
