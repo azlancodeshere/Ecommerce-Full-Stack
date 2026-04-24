@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Ping Backend
         run: |
-          curl -X GET https://ecommerce-full-stack-g7az.onrender.com/health \
+          curl -X GET https://ecommerce-full-stack-g7az.onrender.com/api/health/ \
           -o /dev/null -s -w "HTTP Status: %{http_code}\n"
