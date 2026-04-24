@@ -1,0 +1,15 @@
+name: Keep Backend Alive
+
+on:
+  schedule:
+    - cron: '*/15 * * * *' 
+  workflow_dispatch:          
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Backend
+        run: |
+          curl -X GET https://ecommerce-full-stack-g7az.onrender.com/health \
+          -o /dev/null -s -w "HTTP Status: %{http_code}\n"

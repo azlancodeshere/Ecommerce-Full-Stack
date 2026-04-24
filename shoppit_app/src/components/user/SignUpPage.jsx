@@ -6,14 +6,15 @@ import api from "../../api";
 
 const SignupPage = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
     password2: "",
-     phone: "",
-     city: "",
+    phone: "",
+    city: "",
     state: "",
     address: "",
   });
@@ -26,35 +27,50 @@ const SignupPage = () => {
   };
 
 
-   
-  
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  
 
-  const username = formData.username.trim();
 
-  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if (formData.password !== formData.password2) {
-    alert("Passwords do not match");
-    return;
-  }
 
-  try {
-    const res = await api.post("/api/register/",{ ...formData, username: username});
+    const username = formData.username.trim();
 
-    console.log(res.data);
 
-    alert("User registered successfully");
 
-    navigate("/login");
+    if (formData.password !== formData.password2) {
+      alert("Passwords do not match");
+      return;
+    }
 
-  } catch (err) {
-    console.error(err.response?.data);
-    alert(JSON.stringify(err.response?.data));
-  }
-};
+    try {
+      setLoading(true)
+      const res = await api.post("/api/register/", { ...formData, username: username });
+      console.log(res.data);
+
+
+      const Autologin = await api.post("/token/", {
+        username,
+        password: formData.password,
+      });
+
+      const { access, refresh } = Autologin.data;
+
+
+      localStorage.setItem("access", access);
+      localStorage.setItem("refresh", refresh);
+
+
+      alert("User registered successfully");
+
+      navigate("/");
+
+    } catch (err) {
+      console.error(err.response?.data);
+      alert(JSON.stringify(err.response?.data));
+    } finally {
+      setLoading(false);
+    }
+  };
 
 
 
@@ -111,47 +127,47 @@ const SignupPage = () => {
 
 
           <div className="form-group">
-  <input
-    type="text"
-    name="phone"
-    placeholder="Phone Number"
-    value={formData.phone}
-    onChange={handleChange}
-  />
-</div>
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+            />
+          </div>
 
-<div className="form-group">
-  <input
-    type="text"
-    name="city"
-    placeholder="City"
-    value={formData.city}
-    onChange={handleChange}
-  />
-</div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="city"
+              placeholder="City"
+              value={formData.city}
+              onChange={handleChange}
+            />
+          </div>
 
-<div className="form-group">
-  <input
-    type="text"
-    name="state"
-    placeholder="State"
-    value={formData.state}
-    onChange={handleChange}
-  />
-</div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="state"
+              placeholder="State"
+              value={formData.state}
+              onChange={handleChange}
+            />
+          </div>
 
-<div className="form-group">
-  <input
-    type="text"
-    name="address"
-    placeholder="Address"
-    value={formData.address}
-    onChange={handleChange}
-  />
-</div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="address"
+              placeholder="Address"
+              value={formData.address}
+              onChange={handleChange}
+            />
+          </div>
 
-          <button type="submit" className="signup-btn">
-            Register
+          <button type="submit" className="signup-btn" disabled={loading}>
+            {loading ? "Creating account..." : "Register"}
           </button>
         </form>
 

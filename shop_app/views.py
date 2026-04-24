@@ -278,3 +278,11 @@ def register(request):
         return Response({"message": "User created"}, status=201)
 
     return Response(serializer.errors, status=400)
+
+
+
+
+from django.http import JsonResponse
+
+def health_check(request):
+    return JsonResponse({"status": "ok"})
